@@ -17,3 +17,4 @@
 /Users/guilhermerm/Documents/PersonalProjects/C#/design-patterns-abstract-factory/design-patterns-abstract-factory/obj/Debug/netcoreapp3.1/design-patterns-abstract-factory.AssemblyInfo.cs
 /Users/guilhermerm/Documents/PersonalProjects/C#/design-patterns-abstract-factory/design-patterns-abstract-factory/obj/Debug/netcoreapp3.1/design-patterns-abstract-factory.dll
 /Users/guilhermerm/Documents/PersonalProjects/C#/design-patterns-abstract-factory/design-patterns-abstract-factory/obj/Debug/netcoreapp3.1/design-patterns-abstract-factory.pdb
+/Users/guilhermerm/Documents/PersonalProjects/C#/design-patterns-abstract-factory/design-patterns-abstract-factory/obj/Debug/netcoreapp3.1/design-patterns-abstract-factory.csprojAssemblyReference.cache

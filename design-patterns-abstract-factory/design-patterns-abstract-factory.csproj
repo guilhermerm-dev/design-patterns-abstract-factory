@@ -10,5 +10,6 @@
     <Folder Include="Abstract\" />
     <Folder Include="Abstract\Factory\" />
     <Folder Include="Concrete\" />
+    <Folder Include="Enum\" />
   </ItemGroup>
 </Project>

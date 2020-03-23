@@ -1,5 +1,6 @@
 ﻿
 using System;
+using design_patterns_abstract_factory.Enum;
 
 namespace design_patterns_abstract_factory.Abstract
 {
@@ -13,33 +14,15 @@ namespace design_patterns_abstract_factory.Abstract
 
         public string Model { get; set; }
         public Category Category { get; set; }
-        public abstract void StartEngine();
-        public abstract void StopEngine();
+        public void StartEngine() => Console.WriteLine($"Model: {Model}, Category: {Category} - Engine Started");
+        public void StopEngine() => Console.WriteLine($"Model: {Model}, Category: {Category} - Engine Stopped");
     }
-
-    public enum Category
-    {
-        HatchBack,
-        SUV,
-        Sedan
-    }
-
 
     public class HatchBackCar : Car
     {
         public HatchBackCar(string model, Category category) : base(model, category)
         {
 
-        }
-
-        public override void StartEngine()
-        {
-            Console.WriteLine($"Model: {Model}, Category: {Category} - Engine Started");
-        }
-
-        public override void StopEngine()
-        {
-            Console.WriteLine($"Model: {Model}, Category: {Category} - Engine Stopped");
         }
     }
 
@@ -49,16 +32,6 @@ namespace design_patterns_abstract_factory.Abstract
         {
 
         }
-
-        public override void StartEngine()
-        {
-            Console.WriteLine($"Model: {Model}, Category: {Category} - Engine Started");
-        }
-
-        public override void StopEngine()
-        {
-            Console.WriteLine($"Model: {Model}, Category: {Category} - Engine Stopped");
-        }
     }
 
     public class SedanCar : Car
@@ -67,15 +40,25 @@ namespace design_patterns_abstract_factory.Abstract
         {
 
         }
+    }
 
-        public override void StartEngine()
+    public class CarCreator
+    {
+        public static Car Create(string model, Category category)
         {
-            Console.WriteLine($"Model: {Model}, Category: {Category} - Engine Started");
-        }
+            switch (category)
+            {
+                case Category.HatchBack:
+                    return new HatchBackCar(model, category);
 
-        public override void StopEngine()
-        {
-            Console.WriteLine($"Model: {Model}, Category: {Category} - Engine Stopped");
+                case Category.Sedan:
+                    return new SedanCar(model, category);
+
+                case Category.SUV:
+                    return new SUVCar(model, category);
+                default:
+                    throw new ApplicationException("Category not found");
+            }
         }
     }
 
