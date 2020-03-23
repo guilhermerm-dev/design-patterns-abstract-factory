@@ -1,31 +1,42 @@
 ﻿using System;
+using System.Collections.Generic;
 using design_patterns_abstract_factory.Abstract;
 
-namespace design_patterns_abstract_factory
+namespace design_patterns_abstract_factory.Concrete
 {
     public class HyundaiFactory : CarFactory
     {
-        public override Car CreateCar()
+        public HyundaiFactory()
         {
-            return new I30();
-        }
-    }
-
-    public class I30 : Car
-    {
-        public I30()
-        {
-            CarName = "Hyundai I30";
+            CarCatalog = InitializeCarsCatalog();
         }
 
-        public override void StartEngine()
+        private Dictionary<string, Category> InitializeCarsCatalog()
         {
-            Console.WriteLine("Engine Started OK");
+            return new Dictionary<string, Category>
+            {
+                { "I30", Category.HatchBack},
+                {"Tucson", Category.SUV },
+                {"HB20S", Category.Sedan }
+            };
         }
 
-        public override void StopEngine()
+        public override Car CreateCar(string model, Category category)
         {
-            Console.WriteLine("Engine Stopped OK");
+            switch (category)
+            {
+                case Category.HatchBack:
+                    return new HatchBackCar(model, category);
+
+                case Category.Sedan:
+                    return new SedanCar(model, category);
+
+                case Category.SUV:
+                    return new SUVCar(model, category);
+
+                default:
+                    throw new ApplicationException("Car category not found");
+            }
         }
     }
 }
