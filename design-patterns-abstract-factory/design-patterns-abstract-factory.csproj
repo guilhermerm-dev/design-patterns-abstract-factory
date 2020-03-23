@@ -9,5 +9,6 @@
   <ItemGroup>
     <Folder Include="Abstract\" />
     <Folder Include="Abstract\Factory\" />
+    <Folder Include="Concrete\" />
   </ItemGroup>
 </Project>

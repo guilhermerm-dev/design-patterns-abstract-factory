@@ -1,16 +1,14 @@
 ﻿<Properties StartupConfiguration="{ECEAF0D4-6EE7-4EF1-BB7A-8909310F596C}|Default">
   <MonoDevelop.Ide.ItemProperties.design-patterns-abstract-factory PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="design-patterns-abstract-factory/CarIndustry.cs">
-    <Files>
-      <File FileName="design-patterns-abstract-factory/CarIndustry.cs" Line="9" Column="26" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="design-patterns-abstract-factory" expanded="True">
             <Node name="design-patterns-abstract-factory" expanded="True">
-              <Node name="Abstract" expanded="True" />
-              <Node name="CarIndustry.cs" selected="True" />
+              <Node name="Abstract" expanded="True">
+                <Node name="Car.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
